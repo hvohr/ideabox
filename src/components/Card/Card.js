@@ -1,12 +1,17 @@
 import './Card.css'
 
 function Card(props) {
+  
+  const deleteIdea = (id) => {
+    props.deleteIdea(id);
+  }
+
   return (
-    <section className='card'>
+    <div className='card'>
       <h3>{props.title}</h3>
       <p>{props.description}</p>
-      <button>🗑</button>
-    </section>
+      <button onClick={() => {deleteIdea(props.id)}}>🗑</button>
+    </div>
   )
 }
 
