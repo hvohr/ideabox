@@ -1,23 +1,13 @@
-import './Ideas.css'
-import Card from '../Card/Card'
+import './Card.css'
 
-
-function Ideas({ideas}) {
-  const ideaCards = ideas.map(idea => {
+function Card(props) {
   return (
-      <Card 
-        title={idea.title}
-        description={idea.description}
-        id={idea.id}
-        key={idea.id}
-      />
+    <section className='card'>
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+      <button>🗑</button>
+    </section>
   )
-})
-return (
-  <div className='ideas-container'>
-    {ideaCards}
-  </div>
-)
 }
 
-export default Ideas
+export default Card
